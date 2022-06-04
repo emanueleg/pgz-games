@@ -1,0 +1,17 @@
+memory/images
+* Animals - Animal Sprites (Nov 2014) by emimonserrate's  - https://www.deviantart.com/emimonserrate/art/Animal-Sprites-Nov-2014-494486697
+* Card's back - Card game (Jul 2020) by solofhreaper - https://www.reddit.com/r/PixelArt/comments/ho3wmg/ive_recently_taken_up_the_pixel_art_for_the/
+* Grass - photo by Sharon McCutcheon - https://unsplash.com/photos/fSlCxR0dnZY
+
+memory/sounds
+* Winner - from https://mixkit.co/free-sound-effects/
+
+moonlander/images
+* Moon - Moon Surface 3D Scene by Constantin Os - https://bit.ly/31j8mXy
+* Lander - Apollo Lunar Module by Nerthuz | Dreamstime.com - ID 39390572 - https://www.dreamstime.com/stock-photography-apollo-module-docking-isolated-white-background-d-render-image39390572
+
+memory/sounds
+* Winner & Loser - from https://mixkit.co/free-sound-effects/
+
+eye/images
+* Minion - Minions with one eye - https://cutewallpaper.org/download.php?file=/21/funny-minion-wallpapers/Wallpaper-Stuart-the-Minion,-Funny-minions,-HD,-4K,-8K-.jpg
