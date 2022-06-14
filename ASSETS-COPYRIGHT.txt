@@ -15,3 +15,6 @@ memory/sounds
 
 eye/images
 * Minion - Minions with one eye - https://cutewallpaper.org/download.php?file=/21/funny-minion-wallpapers/Wallpaper-Stuart-the-Minion,-Funny-minions,-HD,-4K,-8K-.jpg
+
+pac-mang/sounds
+* Namco - 1980 arcade Pac-Man game - from https://www.classicgaming.cc/classics/pac-man/sounds

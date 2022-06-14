@@ -11,3 +11,6 @@ Train your brain with a simple memory card matching game
 
 ## moon lander
 Create a simple remake of the Lunar Lander video game genre
+
+## pac-mang
+Simple catching game with a touch of nostalgia
