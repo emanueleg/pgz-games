@@ -33,11 +33,12 @@ def draw():
     
     screen.draw.text("Points: " + str(points), (580, 30), color="white")
 
-    if not gameover:
-        if ghost_y > pacman_y:
-            missed()
-        elif pacman.colliderect(ghost):
-            eaten()
+    if gameover:
+        return
+    if ghost_y > pacman_y:
+        missed()
+    elif pacman.colliderect(ghost):
+        eaten()
 
 def reset():
     global pacman_x, pacman_y, ghost_x, ghost_y, points, v, gameover
