@@ -14,3 +14,6 @@ Create a simple remake of the Lunar Lander video game genre
 
 ## pac-mang
 Simple catching game with a touch of nostalgia
+
+## baloons
+Pop as much baloons as possible in one minute
