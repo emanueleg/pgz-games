@@ -17,3 +17,6 @@ Simple catching game with a touch of nostalgia
 
 ## baloons
 Pop as much baloons as possible in one minute
+
+## bounce
+Simple demo for playing with bouncing physics

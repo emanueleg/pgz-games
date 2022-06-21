@@ -26,3 +26,6 @@ baloons/images
 
 baloons/sound
 * pop - from https://mixkit.co/free-sound-effects/balloon/
+
+bounce/images
+* ball - by Wikipedia user flomar - from https://commons.wikimedia.org/wiki/File:Football_%28soccer_ball%29.svg
