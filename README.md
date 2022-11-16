@@ -1,7 +1,7 @@
 # pgz-games
-Simple Pygame Zero Games written from scratch (for educational pourpuses).
-Games are created step by step - follow the sequence of the source code files to see the games development.
-They have been tested with Thonny 3.3.13.
+Simple Pygame Zero Games written from scratch (for educational purposes).
+Each games has been created step-by-step - follow the sequence of the source files to see the game's development.
+All codes have been tested with Thonny 3.3.13.
 
 ## eyes
 Track your mouse movement and move the Minion's eye
