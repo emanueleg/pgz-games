@@ -5,32 +5,32 @@ import random
 
 WIDTH = 1000
 HEIGHT = 700
-baloons = []
-num_baloons = 8
-colors = ['baloon_red', 'baloon_green', 'baloon_yellow', 'baloon_black', 'baloon_blue']
+balloons = []
+num_balloons = 8
+colors = ['balloon_red', 'balloon_green', 'balloon_yellow', 'balloon_black', 'balloon_blue']
 points = 0
 
 def draw():
     screen.blit('sky', (0, 0))
     
-    for b in baloons:
+    for b in balloons:
         b.draw()
     
     screen.draw.text("Punti: " + str(points), (800, 40), color="white", shadow=(1.0,1.0), scolor="black", fontsize=38)
 
 def reset():
-    global baloons, num_baloons, points
+    global balloons, num_balloons, points
     
-    for i in range(num_baloons):
+    for i in range(num_balloons):
         c = colors[random.randint(0, 4)]
         b = Actor(c)
         b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-        baloons.append(b)
+        balloons.append(b)
     points = 0
     
 def on_mouse_down(pos):
-    global baloons, points
-    for b in baloons:
+    global balloons, points
+    for b in balloons:
         if b.collidepoint(pos):
             b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
             b.image = colors[random.randint(0, 4)]

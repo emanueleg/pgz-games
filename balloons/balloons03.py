@@ -9,6 +9,6 @@ HEIGHT = 700
 def draw():
     screen.blit('sky', (0, 0))
     
-    baloon = Actor('baloon_red')
-    baloon.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-    baloon.draw()
+    balloon = Actor('balloon_red')
+    balloon.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
+    balloon.draw()

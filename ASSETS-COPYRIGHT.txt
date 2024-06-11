@@ -19,12 +19,12 @@ eye/images
 pac-mang/sounds
 * original sound by Namco - 1980 arcade Pac-Man game - from https://www.classicgaming.cc/classics/pac-man/sounds
 
-baloons/images
+balloons/images
 * sky - from https://www.pexels.com/photo/cloudy-sky-531756/
 * needle - clipart-library.com #187573 - from http://clipart-library.com/clipart/340882.htm
-* baloon - from Best Balloon Clip Art #1950 - https://clipartion.com/free-clipart-1950/
+* balloon - from Best Balloon Clip Art #1950 - https://clipartion.com/free-clipart-1950/
 
-baloons/sound
+balloons/sound
 * pop - from https://mixkit.co/free-sound-effects/balloon/
 
 bounce/images
