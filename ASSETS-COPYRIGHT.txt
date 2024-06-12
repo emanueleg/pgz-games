@@ -29,3 +29,10 @@ balloons/sound
 
 bounce/images
 * ball - by Wikipedia user flomar - from https://commons.wikimedia.org/wiki/File:Football_%28soccer_ball%29.svg
+
+caterpillar/sound
+* eat - from https://pixabay.com/it/sound-effects/eat-crunchy-40919/
+
+caterpillar/images
+* mela - from Freepik user brgfx - https://it.freepik.com/vettori-gratuito/mela-rossa-isolata-su-sfondo-bianco_22732132.htm
+* bruco - from Il Grande Bruco fb page- https://www.facebook.com/Ilgrandebruco/
