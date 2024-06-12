@@ -1,6 +1,9 @@
 # ver 02
 # disegniamo un palloncino
 
+class Game: pass
+game = Game()
+
 WIDTH = 1000
 HEIGHT = 700
 

@@ -3,68 +3,60 @@
 
 import random
 
+class Game: pass
+game = Game()
+
 WIDTH = 1000
 HEIGHT = 700
-balloons = []
-num_balloons = 8
-colors = ['balloon_red', 'balloon_green', 'balloon_yellow', 'balloon_black', 'balloon_blue']
-points = 0
-GAMETIME = 60
-time = 0
-gameover = False
-needle_x = WIDTH/2
-needle_y = HEIGHT/2
+game.balloons = []
+game.num_balloons = 8
+game.colors = ['balloon_red', 'balloon_green', 'balloon_yellow', 'balloon_black', 'balloon_blue']
+game.points = 0
+game.GAMETIME = 60
+game.time = 0
+game.gameover = False
+needle = Actor('needle', anchor=('left', 'top'))
 
 def draw():
     screen.blit('sky', (0, 0))
     
-    for b in balloons:
+    for b in game.balloons:
         b.draw()
-
-    needle = Actor('needle', anchor=('left', 'top'))
-    needle.pos = needle_x, needle_y
     needle.draw()
-        
-    screen.draw.text("Punti: " + str(points), (800, 40), color="white", shadow=(1.0,1.0), scolor="black", fontsize=38)
-    screen.draw.text("Tempo: " + str(time), (600, 40), color="white", shadow=(1.0,1.0), scolor="black", fontsize=38)
+    
+    screen.draw.text("Punti: " + str(game.points), (800, 40), color="white", shadow=(1.0,1.0), scolor="black", fontsize=38)
+    screen.draw.text("Tempo: " + str(game.time), (600, 40), color="white", shadow=(1.0,1.0), scolor="black", fontsize=38)
 
 def reset():
-    global balloons, num_balloons, points, time, gameover
-    
-    for i in range(num_balloons):
-        c = colors[random.randint(0, 4)]
+    for i in range(game.num_balloons):
+        c = game.colors[random.randint(0, 4)]
         b = Actor(c)
         b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-        balloons.append(b)
-    points = 0
-    time = GAMETIME
-    gameover = False
-    needle_x = WIDTH/2
-    needle_y = HEIGHT/2
-
-def timer():
-    global time, gameover
+        game.balloons.append(b)
+    game.points = 0
+    game.time = game.GAMETIME
+    game.gameover = False
+    needle.pos = WIDTH/2, HEIGHT/2
     
-    if time > 0:
-        time -= 1
-    else:    
-        gameover = True
+def timer():
+    if game.time > 0:
+        game.time -= 1
+    else: 
+        game.gameover = True
 
 def on_mouse_down(pos):
-    global balloons, points, gameover
-    if gameover:
+    if game.gameover:
         return
-    for b in balloons:
+    for b in game.balloons:
         if b.collidepoint(pos):
             b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-            b.image = colors[random.randint(0, 4)]
+            b.image = game.colors[random.randint(0, 4)]
             sounds.pop.play()
-            points += 1
+            game.points += 1
             break
             
 def on_mouse_move(pos):
-    global needle_x, needle_y
-    needle_x, needle_y = pos
+    needle.pos = pos
 
 reset()
 clock.schedule_interval(timer, 1)

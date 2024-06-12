@@ -3,32 +3,33 @@
 
 import random
 
+class Game: pass
+game = Game()
+
 WIDTH = 1000
 HEIGHT = 700
-balloons = []
-num_balloons = 8
-colors = ['balloon_red', 'balloon_green', 'balloon_yellow', 'balloon_black', 'balloon_blue']
+game.balloons = []
+game.num_balloons = 8
+game.colors = ['balloon_red', 'balloon_green', 'balloon_yellow', 'balloon_black', 'balloon_blue']
 
 def draw():
     screen.blit('sky', (0, 0))
     
-    for b in balloons:
+    for b in game.balloons:
         b.draw()
 
 def reset():
-    global balloons, num_balloons
-    for i in range(num_balloons):
-        c = colors[random.randint(0, 4)]
+    for i in range(game.num_balloons):
+        c = game.colors[random.randint(0, 4)]
         b = Actor(c)
         b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-        balloons.append(b)
+        game.balloons.append(b)
 
 def on_mouse_down(pos):
-    global balloons
-    for b in balloons:
+    for b in game.balloons:
         if b.collidepoint(pos):
             b.pos = random.randint(0, WIDTH), random.randint(0, HEIGHT)
-            b.image = colors[random.randint(0, 4)]
+            b.image = game.colors[random.randint(0, 4)]
             sounds.pop.play()
 
 reset()

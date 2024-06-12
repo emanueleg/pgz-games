@@ -3,6 +3,9 @@
 
 import random
 
+class Game: pass
+game = Game()
+
 WIDTH = 1000
 HEIGHT = 700
 
