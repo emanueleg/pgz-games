@@ -15,8 +15,8 @@ game.v0 = 200
 pacman = Actor('pacman')
 ghost = Actor('ghost')
 
-ghost.v = 0
 pacman.step = 10
+ghost.v = 0
 
 game.points = 0
 game.gameover = False
