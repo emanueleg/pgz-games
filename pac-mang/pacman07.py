@@ -21,7 +21,7 @@ pacman.step = 10
 
 ghost.x = random.randint(50, WIDTH-50)
 ghost.y = 0
-ghost.v = 0
+ghost.v = game.v0
 
 
 def draw():

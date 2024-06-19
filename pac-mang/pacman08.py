@@ -16,7 +16,6 @@ pacman = Actor('pacman')
 ghost = Actor('ghost')
 
 pacman.step = 10
-ghost.v = 0
 
 
 def draw():
@@ -35,6 +34,7 @@ def reset():
     sounds.chomp.play(-1)
     ghost.x = random.randint(50, WIDTH-50)
     ghost.y = 0
+    ghost.v = game.v0
     pacman.x = WIDTH/2
     pacman.y = HEIGHT-40
 
