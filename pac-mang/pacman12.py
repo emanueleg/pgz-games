@@ -3,92 +3,76 @@
 
 import random
 
+class Game: pass
+game = Game()
+
 WIDTH = 700
 HEIGHT = 600
 
-t = 0.10
-v0 = 200
-step = 20
+game.t = 0.10
+game.v0 = 200
 
-ghost_x = 0
-ghost_y = 0
-pacman_x = 0
-pacman_y = 0
-points = 0
-v = 0
-gameover = False
+pacman = Actor('pacman')
+ghost = Actor('ghost')
+
+pacman.step = 10
+ghost.v = 0
+
+game.points = 0
+game.gameover = False
+
 
 def draw():
-    global gameover
-    
     screen.fill((0, 0, 0))
-
-    pacman = Actor('pacman')
-    pacman.pos = pacman_x, pacman_y
     pacman.draw()
-
-    ghost = Actor('ghost')
-    ghost.pos = ghost_x, ghost_y
     ghost.draw()
-    
-    screen.draw.text("Points: " + str(points), (580, 30), color="white")
+    screen.draw.text("Points: " + str(game.points), (580, 30), color="white")
 
-    if gameover:
-        return
-    if ghost_y > pacman_y:
-        missed()
+def update():
+    if game.gameover:
+        return    
+    if ghost.y > pacman.y:
+        miss()
     elif pacman.colliderect(ghost):
-        eaten()
+        eat()
+    if keyboard.right and pacman.x < WIDTH:
+        pacman.x += pacman.step
+    elif keyboard.left and pacman.x > 0:
+        pacman.x -= pacman.step
 
 def reset():
-    global pacman_x, pacman_y, ghost_x, ghost_y, points, v, gameover
-    
     sounds.chomp.stop()
     sounds.chomp.play(-1)
-    ghost_x = random.randint(50, WIDTH-50)
-    ghost_y = 0
-    pacman_x = WIDTH/2
-    pacman_y = HEIGHT-40
-    points = 0
-    v = v0
-    gameover = False
+    ghost.x = random.randint(50, WIDTH-50)
+    ghost.y = 0
+    ghost.v = game.v0
+    pacman.x = WIDTH/2
+    pacman.y = HEIGHT-40
+    game.points = 0
+    game.gameover = False
 
 def on_key_down(key):
-    global pacman_x, gameover
-
     if key == keys.R:
         reset()
-    if gameover:
+    if game.gameover:
         return
-    
-    if key == keys.RIGHT and pacman_x < WIDTH:
-        pacman_x += step
-    elif key == keys.LEFT and pacman_x > 0:
-        pacman_x -= step
 
-def eaten():
-    global ghost_x, ghost_y, points, v
-    
+def eat():
     sounds.eatghost.play()
-    ghost_x = random.randint(50, WIDTH-50)
-    ghost_y = 0
-    points += 1
-    v += v0/5
+    ghost.x = random.randint(50, WIDTH-50)
+    ghost.y = 0
+    game.points += 1
+    ghost.v += game.v0/5
 
-def missed():
-    global gameover
-
+def miss():
     sounds.chomp.stop()
     sounds.death.play()
-    gameover = True
+    game.gameover = True
 
 def fall():
-    global ghost_y, v, gameover
-
-    if gameover:
+    if game.gameover:
         return
-    ghost_y += v*t
-
+    ghost.y += ghost.v*game.t
 
 reset()
-clock.schedule_interval(fall, t)
+clock.schedule_interval(fall, game.t)
